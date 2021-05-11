@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { ListPostComponent } from './list-post/list-post.component';
 import { NewPostComponent } from './new-post/new-post.component';
-import { AuthComponent } from './auth/auth.component';
 import { FilterPostComponent } from './filter-post/filter-post.component';
 import { SearchUserComponent } from './search-user/search-user.component';
 import { AuthGuardService } from './services/auth-guard.service';
@@ -15,14 +14,19 @@ import { UserService } from './services/user.service';
 import { PostService } from './services/post.service';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ProfilUserComponent } from './profil-user/profil-user.component';
+import { SigninComponent } from './auth/signin/signin.component';
+import { SignupComponent } from './auth/signup/signup.component';
 
 const appRoutes: Routes =  [
-  { path: 'list-post', component: ListPostComponent },
-  { path: 'new-post', component: NewPostComponent },
-  { path: 'search-user', component: SearchUserComponent },
-  { path: 'auth', component: AuthComponent },
-  { path: '', component: ListPostComponent },
-  { path: '**', component: ListPostComponent }
+  { path: 'list-post', canActivate: [AuthGuardService], component: ListPostComponent },
+  { path: 'new-post', canActivate: [AuthGuardService], component: NewPostComponent },
+  { path: 'search-user', canActivate: [AuthGuardService], component: SearchUserComponent },
+  { path: 'profil-user/:id', canActivate: [AuthGuardService], component: SearchUserComponent },
+  { path: 'auth/signin', component: SigninComponent },
+  { path: 'auth/signup', component: SignupComponent },
+  { path: '', redirectTo: 'list-post', pathMatch: 'full' },
+  { path: '**', redirectTo: 'list-post' }
 ]
 
 @NgModule({
@@ -31,9 +35,11 @@ const appRoutes: Routes =  [
     HeaderComponent,
     ListPostComponent,
     NewPostComponent,
-    AuthComponent,
+    SigninComponent,
+    SignupComponent,
     FilterPostComponent,
-    SearchUserComponent
+    SearchUserComponent,
+    ProfilUserComponent,
   ],
   imports: [
     BrowserModule,
