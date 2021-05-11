@@ -9,6 +9,21 @@ import { NewPostComponent } from './new-post/new-post.component';
 import { AuthComponent } from './auth/auth.component';
 import { FilterPostComponent } from './filter-post/filter-post.component';
 import { SearchUserComponent } from './search-user/search-user.component';
+import { AuthGuardService } from './services/auth-guard.service';
+import { AuthService } from './services/auth.service';
+import { UserService } from './services/user.service';
+import { PostService } from './services/post.service';
+import { RouterModule, Routes } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+const appRoutes: Routes =  [
+  { path: 'list-post', component: ListPostComponent },
+  { path: 'new-post', component: NewPostComponent },
+  { path: 'search-user', component: SearchUserComponent },
+  { path: 'auth', component: AuthComponent },
+  { path: '', component: ListPostComponent },
+  { path: '**', component: ListPostComponent }
+]
 
 @NgModule({
   declarations: [
@@ -22,9 +37,17 @@ import { SearchUserComponent } from './search-user/search-user.component';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
+    RouterModule.forRoot(appRoutes),
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    AuthGuardService,
+    AuthService,
+    UserService,
+    PostService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
