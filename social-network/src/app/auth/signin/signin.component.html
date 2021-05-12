@@ -1,5 +1,5 @@
 <h1 class="pb-4 pt-4 text-center">Connectez-vous !</h1>
-<div class="col-5 mx-auto">
+<div class="col position-relative">
     <form [formGroup]="signInForm" class="mt-5" (ngSubmit)="onSignIn()">
         <div class="form-group mb-3">
             <label class="form-label" for="email">Adresse e-mail</label>
@@ -9,7 +9,12 @@
             <label class="form-label" for="password">Mot de passe</label>
             <input class="form-control" type="password" formControlName="password">
         </div>
-        <button class="btn btn-primary mt-4" [disabled]="signInForm.invalid">Se connecter</button>
-        <p class="text-danger">{{ errorMessage }}</p>
+        <div class="form-group mt-2">
+            <a routerLink="auth">Mot de passe oublié ?</a>
+        </div>
+        <div class="text-center">
+            <button class="btn btn-primary mt-4 mb-2" [disabled]="signInForm.invalid">Se connecter</button>
+            <p class="text-danger">{{ errorMessage }}</p>
+        </div>
     </form>
 </div>

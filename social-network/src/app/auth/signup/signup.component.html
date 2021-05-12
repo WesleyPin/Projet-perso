@@ -1,5 +1,5 @@
-<h1 class="pt-4 text-center">Rejoignez nous !</h1>
-<div class="col-5 mx-auto">
+<h1 class="pt-4 pb-4 text-center">Rejoignez nous !</h1>
+<div class="col position-relative">
     <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
         <div class="form-group mb-2">
             <label class="form-label" for="pseudo">Pseudo</label>
@@ -17,7 +17,9 @@
             <label class="form-label" for="confirmPassword">Confirmation du mot de passe</label>
             <input class="form-control" type="password" formControlName="confirmPassword">
         </div>
-        <button class="btn btn-primary mt-4" type="submit" [disabled]="signUpForm.invalid">Enregistrer</button>
-        <p class="text-danger">{{ errorMessage }}</p>
+        <div class="text-center">
+            <button class="btn btn-primary mt-4 mb-2" type="submit" [disabled]="signUpForm.invalid">Enregistrer</button>
+            <p class="text-danger">{{ errorMessage }}</p>
+        </div>
     </form>
 </div>
