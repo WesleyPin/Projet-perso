@@ -1,0 +1,14 @@
+<div class="background">
+    <div class="container position-absolute top-50 start-50 translate-middle">
+        <div class="row">
+            <div class="col-4 bg-primary">
+                <h1>Welcome</h1>
+                <a routerLink="auth/signup" (click)="switchSign()">Sign up</a>
+            </div>
+            <div class="col-8 bg-light">
+                <app-signin *ngIf="isSignIn"></app-signin>
+                <app-signup *ngIf="!isSignIn"></app-signup>
+            </div>
+        </div>
+    </div>
+</div>

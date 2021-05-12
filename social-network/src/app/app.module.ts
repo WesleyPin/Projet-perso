@@ -17,14 +17,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProfilUserComponent } from './profil-user/profil-user.component';
 import { SigninComponent } from './auth/signin/signin.component';
 import { SignupComponent } from './auth/signup/signup.component';
+import { AuthComponent } from './auth/auth/auth.component';
 
 const appRoutes: Routes =  [
   { path: 'list-post', canActivate: [AuthGuardService], component: ListPostComponent },
   { path: 'new-post', canActivate: [AuthGuardService], component: NewPostComponent },
   { path: 'search-user', canActivate: [AuthGuardService], component: SearchUserComponent },
   { path: 'profil-user/:id', canActivate: [AuthGuardService], component: SearchUserComponent },
-  { path: 'auth/signin', component: SigninComponent },
-  { path: 'auth/signup', component: SignupComponent },
+  { path: 'auth', component: AuthComponent },
   { path: '', redirectTo: 'list-post', pathMatch: 'full' },
   { path: '**', redirectTo: 'list-post' }
 ]
@@ -40,6 +40,7 @@ const appRoutes: Routes =  [
     FilterPostComponent,
     SearchUserComponent,
     ProfilUserComponent,
+    AuthComponent,
   ],
   imports: [
     BrowserModule,
