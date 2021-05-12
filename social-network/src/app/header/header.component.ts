@@ -12,6 +12,7 @@ import { AuthService } from '../services/auth.service';
 export class HeaderComponent implements OnInit {
 
   isAuth: boolean;
+  pseudo: string;
 
   constructor(private authService: AuthService) { }
 
@@ -20,10 +21,15 @@ export class HeaderComponent implements OnInit {
       (user) => {
         if (user) {
           this.isAuth = true;
+          this.pseudo = user.email;
         } else {
           this.isAuth = false;
         }
       }
     );
+  }
+
+  onSignOut() {
+    this.authService.signOutUser();
   }
 }
