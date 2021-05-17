@@ -15,7 +15,7 @@ export class UserService {
   createNewUser(user: User) {
     return new Promise(
       (resolve, reject) => {
-        firebase.database().ref('user').push(user).then(
+        firebase.database().ref('user').set(user).then(
           () => {
             resolve(true);
           },

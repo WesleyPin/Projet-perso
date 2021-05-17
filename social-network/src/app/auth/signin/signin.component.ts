@@ -27,6 +27,7 @@ export class SigninComponent implements OnInit {
   }
 
   onSignIn() {
+    console.log('test');
     const email = this.signInForm.get('email').value;
     const password = this.signInForm.get('password').value;
     this.authService.signInUser(email, password).then(

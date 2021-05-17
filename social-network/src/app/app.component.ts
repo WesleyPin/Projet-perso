@@ -16,6 +16,7 @@ export class AppComponent {
     var firebaseConfig = {
       apiKey: "AIzaSyDvznYhV3fdzW1-yiyvJVsmYSs-JdI1pdQ",
       authDomain: "social-network-d6e79.firebaseapp.com",
+      databaseURL: "https://social-network-d6e79-default-rtdb.europe-west1.firebasedatabase.app",
       projectId: "social-network-d6e79",
       storageBucket: "social-network-d6e79.appspot.com",
       messagingSenderId: "344033441253",
