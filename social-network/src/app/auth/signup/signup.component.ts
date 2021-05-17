@@ -37,9 +37,9 @@ export class SignupComponent implements OnInit {
     const pseudo = this.signUpForm.get('pseudo').value;
     const newUser = new User(email, password, pseudo);
     if (password === confirmPassword) {
-      this.userService.createNewUser(newUser);
       this.authService.createNewUser(email, password).then(
-        () => {
+        (u: string) => {
+          this.userService.createNewUser(newUser, u);
           this.router.navigate(['/list-post']);
         },
         (error) => {
