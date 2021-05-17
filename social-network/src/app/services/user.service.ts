@@ -30,7 +30,19 @@ export class UserService {
     )
   }
 
-
+  getUserByUid(uid: string) {
+    return new Promise(
+      (resolve, reject) => {
+        firebase.database().ref('user/' + uid).once('value').then(
+          (data) => {
+            resolve(data.val());
+          }, (error) => {
+            reject(error);
+          }
+        )
+      }
+    )
+  }
 
 
 }

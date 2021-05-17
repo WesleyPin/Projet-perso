@@ -6,7 +6,7 @@
                 <app-signup *ngIf="!isSignIn"></app-signup>
                 <div class="col text-center">
                     <p class="text-center">{{ messageSign }}</p>
-                    <a routerLink="auth/signup" (click)="switchSign()">{{ signInOrUp }}</a>
+                    <a routerLink="auth/signup" class="link-light" (click)="switchSign()">{{ signInOrUp }}</a>
                 </div>
             </div>
         </div>

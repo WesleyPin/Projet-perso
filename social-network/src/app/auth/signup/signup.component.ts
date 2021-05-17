@@ -14,6 +14,7 @@ export class SignupComponent implements OnInit {
 
   signUpForm: FormGroup;
   errorMessage: string;
+  linkPicture: string = "../../../assets/image/alpha-logo.gif";
 
   constructor(private formBuilder: FormBuilder, private router: Router, private userService: UserService, private authService: AuthService) { }
 
@@ -26,7 +27,8 @@ export class SignupComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.pattern(/[0-9a-zA-Z]{6,}/)]],
       confirmPassword: ['', Validators.required],
-      pseudo: ['', [Validators.required, Validators.maxLength(12), Validators.minLength(4)]]
+      pseudo: ['', [Validators.required, Validators.maxLength(12), Validators.minLength(4)]],
+      picture: ['']
     })
   }
 
