@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/firestore";
+import "firebase/storage";
+import "firebase/database";
 import { Subject } from 'rxjs';
 import { User } from '../models/user.model';
 
@@ -17,7 +19,8 @@ export class UserService {
       (resolve, reject) => {
         firebase.database().ref('user/' + uid).set({
           pseudo: user.pseudo,
-          email: user.email
+          email: user.email,
+          photo: user.photo
         }).then(
           () => {
             resolve(true);
@@ -44,5 +47,24 @@ export class UserService {
     )
   }
 
+  uploadFile(file: File) {
+    return new Promise(
+      (resolve, reject) => {
+        const almostUniqueFileName = Date.now().toString();
+        const upload = firebase.storage().ref()
+        .child('images/' + almostUniqueFileName + file.name)
+        .put(file);
+        upload.on(firebase.storage.TaskEvent.STATE_CHANGED, 
+          () => { 
+            console.log('Chargement ...') 
+          }, (error) => { 
+            console.log('Erreur de chargement : ' + error); reject() 
+          }, () => {
+            resolve(firebase.storage().ref().child('images/' + almostUniqueFileName + file.name).getDownloadURL());
+          } 
+        );
+      }
+    )
+  }
 
 }
