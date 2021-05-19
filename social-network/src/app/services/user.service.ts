@@ -47,6 +47,8 @@ export class UserService {
     )
   }
 
+  
+
   uploadFile(file: File) {
     return new Promise(
       (resolve, reject) => {

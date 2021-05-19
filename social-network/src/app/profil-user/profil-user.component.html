@@ -1,1 +1,19 @@
-<button class="btn btn-primary" (click)="onSignOut()">Déconnexion</button>
+<div class="container pt-4">
+    <div class="row">
+        <div class="col text-center">
+            <div class="text-center picture-upload">
+                <label for="pictureToUpload" class="upload-picture">
+                    <img *ngIf="fileUrl" class="profil-picture mb-2" src="{{ fileUrl  }}" alt="">
+                </label>
+                <input id="pictureToUpload" type="file" (change)="detectFiles($event)" accept="image/*">
+            </div>
+            <h3 class="mb-2">{{ currentUser.pseudo }}</h3>
+            <h4>Informations personnelles</h4>
+            <p>Adresse e-mail : {{ currentUser.email }}</p>
+            <button class="btn btn-danger" (click)="onSignOut()">Déconnexion</button>
+            <button class="btn btn-success" (click)="onSave()">Enregistrer</button>
+        </div>
+    </div>
+</div>
+
+

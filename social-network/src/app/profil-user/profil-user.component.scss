@@ -1,0 +1,18 @@
+.profil-picture {
+    width: 80px; 
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px #2B80FD solid;
+    &:hover {
+        border-color: #FDA82B;
+    }
+}
+
+.picture-upload>input {
+    display: none;
+}
+
+.upload-picture {
+    cursor: pointer;
+}
