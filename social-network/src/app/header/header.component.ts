@@ -14,7 +14,7 @@ import { UserService } from '../services/user.service';
 export class HeaderComponent implements OnInit {
 
   isAuth: boolean;
-  pseudo: string;
+  currentUser: User;
 
   constructor(private authService: AuthService, private userService: UserService) { }
 
@@ -25,7 +25,8 @@ export class HeaderComponent implements OnInit {
           this.isAuth = true;
           this.userService.getUserByUid(user.uid).then(
             (u: User) => {
-              this.pseudo = u.pseudo;
+              this.currentUser = u;
+              this.currentUser.uid = user.uid;
             }, (error) => {
               console.log('erreur de récupération.');
             }

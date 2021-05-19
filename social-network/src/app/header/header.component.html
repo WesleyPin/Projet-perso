@@ -12,7 +12,7 @@
                 </form>
             </li>
             <li class="nav-item">
-                <a routerLink="profil-user" (click)="onSignOut()">{{ pseudo }}</a>
+                <a [routerLink]="['/profil-user', currentUser.uid]">{{ currentUser.pseudo }}</a>
             </li>
         </ul>
     </div>

@@ -23,7 +23,7 @@ const appRoutes: Routes =  [
   { path: 'list-post', canActivate: [AuthGuardService], component: ListPostComponent },
   { path: 'new-post', canActivate: [AuthGuardService], component: NewPostComponent },
   { path: 'search-user', canActivate: [AuthGuardService], component: SearchUserComponent },
-  { path: 'profil-user/:id', canActivate: [AuthGuardService], component: SearchUserComponent },
+  { path: 'profil-user/:id', canActivate: [AuthGuardService], component: ProfilUserComponent },
   { path: 'auth', component: AuthComponent },
   { path: '', redirectTo: 'list-post', pathMatch: 'full' },
   { path: '**', redirectTo: 'list-post' }

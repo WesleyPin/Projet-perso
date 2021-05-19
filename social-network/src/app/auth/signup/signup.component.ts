@@ -14,7 +14,6 @@ export class SignupComponent implements OnInit {
 
   signUpForm: FormGroup;
   errorMessage: string;
-  linkPicture: string = "../../../assets/image/alpha-logo.gif";
 
   constructor(private formBuilder: FormBuilder, private router: Router, private userService: UserService, private authService: AuthService) { }
 
