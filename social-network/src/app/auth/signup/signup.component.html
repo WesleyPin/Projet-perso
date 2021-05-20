@@ -2,7 +2,7 @@
 <div class="col position-relative">
     <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
         <div class="text-center picture-upload">
-            <label for="pictureToUpload" class="upload-picture">
+            <label for="pictureToUpload" class="upload-picture position-relative">
                 <img *ngIf="fileUrl" class="profil-picture" src="{{ fileUrl  }}" alt="">
             </label>
             <input id="pictureToUpload" type="file" (change)="detectFiles($event)" formControlName="picture"  accept="image/*">

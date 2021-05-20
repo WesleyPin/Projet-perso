@@ -4,6 +4,7 @@
     object-fit: cover;
     border-radius: 50%;
     border: 2px #2B80FD solid;
+    z-index: 2;
     &:hover {
         border-color: #FDA82B;
     }
@@ -15,4 +16,8 @@
 
 .upload-picture {
     cursor: pointer;
+}
+
+.upload-picture>span {
+    z-index: 1;
 }
