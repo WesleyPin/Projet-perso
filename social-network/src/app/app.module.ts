@@ -18,6 +18,7 @@ import { ProfilUserComponent } from './profil-user/profil-user.component';
 import { SigninComponent } from './auth/signin/signin.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { AuthComponent } from './auth/auth/auth.component';
+import { PostComponent } from './post/post.component';
 
 const appRoutes: Routes =  [
   { path: 'list-post', canActivate: [AuthGuardService], component: ListPostComponent },
@@ -41,6 +42,7 @@ const appRoutes: Routes =  [
     SearchUserComponent,
     ProfilUserComponent,
     AuthComponent,
+    PostComponent,
   ],
   imports: [
     BrowserModule,

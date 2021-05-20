@@ -1,0 +1,18 @@
+.new-post {
+    background-color: rgba(43, 128, 253, 0.3);
+    border-radius: 8px;
+}
+
+.new-post>app-post {
+    display: none;
+}
+
+.title-post::before {
+    +app-post {
+        display: block;
+    }
+}
+
+.title-post:placeholder-shown {
+    font-style: italic;
+}
