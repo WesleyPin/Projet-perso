@@ -1,0 +1,16 @@
+.title-post:placeholder-shown {
+    font-style: italic;
+}
+
+.button-post {
+    color: white;
+    background-color: rgba(43, 128, 253);
+    outline: none;
+    border: none;
+    width: 150px;
+    padding: 10px;
+    border-radius: 5px;
+    &:hover {
+        background-color: rgba(27, 80, 158);
+    }
+}

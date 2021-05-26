@@ -3,16 +3,35 @@
     border-radius: 8px;
 }
 
-.new-post>app-post {
-    display: none;
+
+.profil-picture {
+    width: 40px; 
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px #343A40 solid;
+    z-index: 2;
 }
 
-.title-post::before {
-    +app-post {
-        display: block;
+.block-user-post {
+    display: inline-flex;
+    align-items: center;
+}
+
+.button-add {
+    position: absolute;
+    right: 0px;
+    color: rgba(43, 128, 253);
+    &:hover {
+        color: rgba(27, 80, 158);
     }
 }
 
-.title-post:placeholder-shown {
-    font-style: italic;
+.button-cancel {
+    position: absolute;
+    right: 0px;
+    color: rgba(223, 33, 33);
+    &:hover {
+        color: rgba(159, 24, 24);
+    }
 }
