@@ -1,3 +1,5 @@
 export class Post {
-    constructor() {}
+    private like: number;
+    private com: string[];
+    constructor(public link: string, public message: string) {}
 }

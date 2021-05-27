@@ -4,13 +4,14 @@
 
 .button-post {
     color: white;
-    background-color: rgba(43, 128, 253);
+    background-color: rgba(27, 80, 158);
     outline: none;
     border: none;
     width: 150px;
     padding: 10px;
     border-radius: 5px;
+    cursor: pointer;
     &:hover {
-        background-color: rgba(27, 80, 158);
+        background-color: rgba(43, 128, 253);
     }
 }

@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, Input, OnInit, ViewChild } from '@angular/core';
 import { User } from '../models/user.model';
 import firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/firestore";
 import { AuthService } from '../services/auth.service';
 import { UserService } from '../services/user.service';
+import { NewPostComponent } from '../new-post/new-post.component';
 
 @Component({
   selector: 'app-list-post',
@@ -34,6 +35,7 @@ export class ListPostComponent implements OnInit {
       }
     );
   }
+
 
   changeStatusAdd() {
     this.isAddingPost = !this.isAddingPost;

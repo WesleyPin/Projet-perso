@@ -21,17 +21,19 @@
 .button-add {
     position: absolute;
     right: 0px;
-    color: rgba(43, 128, 253);
+    color: rgba(27, 80, 158);
+    cursor: pointer;
     &:hover {
-        color: rgba(27, 80, 158);
+        color: rgba(43, 128, 253);
     }
 }
 
 .button-cancel {
     position: absolute;
     right: 0px;
-    color: rgba(223, 33, 33);
+    color: rgba(159, 24, 24);
+    cursor: pointer;
     &:hover {
-        color: rgba(159, 24, 24);
+        color: rgba(223, 33, 33);
     }
 }
